@@ -14,6 +14,8 @@
 
 @implementation ViewController
 
+@synthesize display = _display;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -26,4 +28,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)userDidPressNumber:(id)sender
+{
+    self.display.text = [NSString stringWithFormat:@"%@%@", self.display.text, [sender titleForState:UIControlStateNormal]];
+}
+
+- (void)clearDisplay
+{
+    self.display.text = @"";
+}
 @end

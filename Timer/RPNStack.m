@@ -37,11 +37,6 @@
     return [[self.data lastObject] doubleValue];
 }
 
-- (NSUInteger)count
-{
-    return [self.data count];
-}
-
 - (void)clear
 {
     [self.data removeAllObjects];
@@ -57,6 +52,11 @@
     
     [self.data removeLastObject];
     return poppedValue;
+}
+
+- (NSUInteger)count
+{
+    return [self.data count];
 }
 
 @end

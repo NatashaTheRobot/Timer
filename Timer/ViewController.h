@@ -10,4 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *display;
+
+- (IBAction)userDidPressNumber:(id)sender;
+- (void)clearDisplay;
+
 @end

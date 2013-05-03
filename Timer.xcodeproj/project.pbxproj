@@ -10,6 +10,7 @@
 		006F6F0DC0BB40AB9EAEFF60 /* libPods-TimerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D62D8B7049D34A4882BCB327 /* libPods-TimerTests.a */; };
 		9C0DE4D81733FB990052EEB1 /* RPNStackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0DE4D71733FB990052EEB1 /* RPNStackSpec.m */; };
 		9C0DE4DB173400040052EEB1 /* RPNStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0DE4DA173400040052EEB1 /* RPNStack.m */; };
+		9C0DE4DF1734130D0052EEB1 /* RPNEntrySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0DE4DE1734130D0052EEB1 /* RPNEntrySpec.m */; };
 		9C67E37A1733DF050030FD9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C67E3791733DF050030FD9E /* UIKit.framework */; };
 		9C67E37C1733DF050030FD9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C67E37B1733DF050030FD9E /* Foundation.framework */; };
 		9C67E37E1733DF050030FD9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C67E37D1733DF050030FD9E /* CoreGraphics.framework */; };
@@ -42,6 +43,7 @@
 		9C0DE4D71733FB990052EEB1 /* RPNStackSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPNStackSpec.m; sourceTree = "<group>"; };
 		9C0DE4D9173400040052EEB1 /* RPNStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPNStack.h; sourceTree = "<group>"; };
 		9C0DE4DA173400040052EEB1 /* RPNStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPNStack.m; sourceTree = "<group>"; };
+		9C0DE4DE1734130D0052EEB1 /* RPNEntrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RPNEntrySpec.m; path = ../RPNEntrySpec.m; sourceTree = "<group>"; };
 		9C67E3761733DF050030FD9E /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C67E3791733DF050030FD9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C67E37B1733DF050030FD9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -154,6 +156,7 @@
 		9C67E3A31733DF060030FD9E /* TimerTests */ = {
 			isa = PBXGroup;
 			children = (
+				9C0DE4DE1734130D0052EEB1 /* RPNEntrySpec.m */,
 				9C0DE4D71733FB990052EEB1 /* RPNStackSpec.m */,
 				9C67E3A41733DF060030FD9E /* Supporting Files */,
 			);
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0DE4D81733FB990052EEB1 /* RPNStackSpec.m in Sources */,
+				9C0DE4DF1734130D0052EEB1 /* RPNEntrySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
