@@ -16,7 +16,8 @@
     NSMutableArray *timeUnits;
     NSString *time;
 }
-- (IBAction)userTyping:(id)sender;
+- (IBAction)enterStartTime:(id)sender;
+- (IBAction)clearWithButton:(id)sender;
 
 @end
 
@@ -35,8 +36,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)userTyping:(id)sender {
-    
+- (IBAction)enterStartTime:(id)sender
+{
     if (!timeUnits) {
         timeUnits = [[NSMutableArray alloc] init];
     }
@@ -68,6 +69,12 @@
         }
     }
     
+    timeLabel.text = time;
+}
+
+- (IBAction)clearWithButton:(id)sender {
+    [timeUnits removeAllObjects];
+    time = @"00:00:00";
     timeLabel.text = time;
 }
 @end
