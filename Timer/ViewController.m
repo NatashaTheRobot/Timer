@@ -7,20 +7,19 @@
 //
 
 #import "ViewController.h"
+#import "Time.h"
 
 @interface ViewController ()
 {
     __weak IBOutlet UILabel *timeLabel;
     __weak IBOutlet UITextField *textField;
     
-    NSString *time;
+    Time *time;
     
     int textFieldTextLength;
 }
 - (IBAction)enterStartTime:(id)sender;
 - (IBAction)clearWithButton:(id)sender;
-
-- (NSString *)newTime;
 
 @end
 
@@ -32,6 +31,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [textField becomeFirstResponder];
     textFieldTextLength = 0;
+    time = [[Time alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,50 +46,25 @@
         textFieldTextLength++;
     
         if ([textField.text length] <= 6) {
-            time = [self newTime];
+            [time newTime:textField.text];
         }
     } else {
         textFieldTextLength--;
         
         if (textFieldTextLength > 0) {
-            time = [self newTime];
+            [time newTime:textField.text];
         } else {
-            time = @"00:00:00";
+            time.timeText = @"00:00:00";
         }
     }
     
-    timeLabel.text = time;
+    timeLabel.text = time.timeText;
 }
 
 - (IBAction)clearWithButton:(id)sender {
-    time = @"00:00:00";
+    time.timeText = @"00:00:00";
     textField.text = @"";
     textFieldTextLength = 0;
-    timeLabel.text = time;
-}
-
-- (NSString *)newTime
-{
-    switch ([textField.text length]) {
-        case 1:
-            time = [[NSString alloc] initWithFormat:@"00:00:0%c", [textField.text characterAtIndex:0]];
-            break;
-        case 2:
-            time = [[NSString alloc] initWithFormat:@"00:00:%c%c", [textField.text characterAtIndex:0], [textField.text characterAtIndex:1]];
-            break;
-        case 3:
-            time = [[NSString alloc] initWithFormat:@"00:0%c:%c%c", [textField.text characterAtIndex:0], [textField.text characterAtIndex:1], [textField.text characterAtIndex:2]];
-            break;
-        case 4:
-            time = [[NSString alloc] initWithFormat:@"00:%c%c:%c%c", [textField.text characterAtIndex:0], [textField.text characterAtIndex:1], [textField.text characterAtIndex:2], [textField.text characterAtIndex:3]];
-            break;
-        case 5:
-            time = [[NSString alloc] initWithFormat:@"0%c:%c%c:%c%c", [textField.text characterAtIndex:0], [textField.text characterAtIndex:1], [textField.text characterAtIndex:2], [textField.text characterAtIndex:3], [textField.text characterAtIndex:4]];
-            break;
-        case 6:
-            time = [[NSString alloc] initWithFormat:@"%c%c:%c%c:%c%c", [textField.text characterAtIndex:0], [textField.text characterAtIndex:1], [textField.text characterAtIndex:2], [textField.text characterAtIndex:3], [textField.text characterAtIndex:4], [textField.text characterAtIndex:5]];
-            break;
-    }
-    return time;
+    timeLabel.text = time.timeText;
 }
 @end
