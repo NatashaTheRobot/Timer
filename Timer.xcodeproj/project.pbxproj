@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		006F6F0DC0BB40AB9EAEFF60 /* libPods-TimerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D62D8B7049D34A4882BCB327 /* libPods-TimerTests.a */; };
 		9C0DE4D61733E1CE0052EEB1 /* SampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0DE4D51733E1CE0052EEB1 /* SampleSpec.m */; };
+		9C0DE4E117343E840052EEB1 /* zen-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C0DE4E017343E840052EEB1 /* zen-image.jpg */; };
 		9C67E37A1733DF050030FD9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C67E3791733DF050030FD9E /* UIKit.framework */; };
 		9C67E37C1733DF050030FD9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C67E37B1733DF050030FD9E /* Foundation.framework */; };
 		9C67E37E1733DF050030FD9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C67E37D1733DF050030FD9E /* CoreGraphics.framework */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		19EA7EF40ECD4267AF55BE07 /* Pods-TimerTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerTests.xcconfig"; path = "Pods/Pods-TimerTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		9C0DE4D51733E1CE0052EEB1 /* SampleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleSpec.m; path = ../SampleSpec.m; sourceTree = "<group>"; };
+		9C0DE4E017343E840052EEB1 /* zen-image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "zen-image.jpg"; sourceTree = "<group>"; };
 		9C67E3761733DF050030FD9E /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C67E3791733DF050030FD9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C67E37B1733DF050030FD9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +129,7 @@
 				9C67E3911733DF050030FD9E /* ViewController.h */,
 				9C67E3921733DF050030FD9E /* ViewController.m */,
 				9C67E3941733DF050030FD9E /* ViewController.xib */,
+				9C0DE4E017343E840052EEB1 /* zen-image.jpg */,
 				9C67E3801733DF050030FD9E /* Supporting Files */,
 			);
 			path = Timer;
@@ -242,6 +245,7 @@
 				9C67E38E1733DF050030FD9E /* Default@2x.png in Resources */,
 				9C67E3901733DF050030FD9E /* Default-568h@2x.png in Resources */,
 				9C67E3961733DF050030FD9E /* ViewController.xib in Resources */,
+				9C0DE4E117343E840052EEB1 /* zen-image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
