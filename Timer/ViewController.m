@@ -13,7 +13,6 @@
     __weak IBOutlet UILabel *timeLabel;
     __weak IBOutlet UITextField *textField;
     
-    NSMutableArray *timeUnits;
     NSString *time;
     
     int textFieldTextLength;
@@ -21,7 +20,7 @@
 - (IBAction)enterStartTime:(id)sender;
 - (IBAction)clearWithButton:(id)sender;
 
-- (NSString *)newTime:(int)timeUnitsEntered;
+- (NSString *)newTime;
 
 @end
 
@@ -43,27 +42,17 @@
 
 - (IBAction)enterStartTime:(id)sender
 {
-    if (!timeUnits) {
-        timeUnits = [[NSMutableArray alloc] init];
-    }
-    
     if ([textField.text length] > textFieldTextLength) {
         textFieldTextLength++;
     
-        if ([timeUnits count] <= 6) {
-            
-            NSString *lastCharTyped = [textField.text substringFromIndex:[textField.text length] - 1];
-
-            [timeUnits addObject:lastCharTyped];
-        
-            time = [self newTime:[timeUnits count]];
+        if ([textField.text length] <= 6) {
+            time = [self newTime];
         }
     } else {
         textFieldTextLength--;
-        [timeUnits removeLastObject];
         
         if (textFieldTextLength > 0) {
-            time = [self newTime:[timeUnits count]];
+            time = [self newTime];
         } else {
             time = @"00:00:00";
         }
@@ -73,33 +62,32 @@
 }
 
 - (IBAction)clearWithButton:(id)sender {
-    [timeUnits removeAllObjects];
     time = @"00:00:00";
     textField.text = @"";
     textFieldTextLength = 0;
     timeLabel.text = time;
 }
 
-- (NSString *)newTime:(int)timeUnitsEntered
+- (NSString *)newTime
 {
-    switch (timeUnitsEntered) {
+    switch ([textField.text length]) {
         case 1:
-            time = [[NSString alloc] initWithFormat:@"00:00:0%@", timeUnits[0]];
+            time = [[NSString alloc] initWithFormat:@"00:00:0%c", [textField.text characterAtIndex:0]];
             break;
         case 2:
-            time = [[NSString alloc] initWithFormat:@"00:00:%@%@", timeUnits[0], timeUnits[1]];
+            time = [[NSString alloc] initWithFormat:@"00:00:%c%c", [textField.text characterAtIndex:0], [textField.text characterAtIndex:1]];
             break;
         case 3:
-            time = [[NSString alloc] initWithFormat:@"00:0%@:%@%@", timeUnits[0], timeUnits[1], timeUnits[2]];
+            time = [[NSString alloc] initWithFormat:@"00:0%c:%c%c", [textField.text characterAtIndex:0], [textField.text characterAtIndex:1], [textField.text characterAtIndex:2]];
             break;
         case 4:
-            time = [[NSString alloc] initWithFormat:@"00:%@%@:%@%@", timeUnits[0], timeUnits[1], timeUnits[2], timeUnits[3]];
+            time = [[NSString alloc] initWithFormat:@"00:%c%c:%c%c", [textField.text characterAtIndex:0], [textField.text characterAtIndex:1], [textField.text characterAtIndex:2], [textField.text characterAtIndex:3]];
             break;
         case 5:
-            time = [[NSString alloc] initWithFormat:@"0%@:%@%@:%@%@", timeUnits[0], timeUnits[1], timeUnits[2], timeUnits[3], timeUnits[4]];
+            time = [[NSString alloc] initWithFormat:@"0%c:%c%c:%c%c", [textField.text characterAtIndex:0], [textField.text characterAtIndex:1], [textField.text characterAtIndex:2], [textField.text characterAtIndex:3], [textField.text characterAtIndex:4]];
             break;
         case 6:
-            time = [[NSString alloc] initWithFormat:@"%@%@:%@%@:%@%@", timeUnits[0], timeUnits[1], timeUnits[2], timeUnits[3], timeUnits[4], timeUnits[5]];
+            time = [[NSString alloc] initWithFormat:@"%c%c:%c%c:%c%c", [textField.text characterAtIndex:0], [textField.text characterAtIndex:1], [textField.text characterAtIndex:2], [textField.text characterAtIndex:3], [textField.text characterAtIndex:4], [textField.text characterAtIndex:5]];
             break;
     }
     return time;
