@@ -11,6 +11,9 @@
 		9C0DE4D61733E1CE0052EEB1 /* SampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0DE4D51733E1CE0052EEB1 /* SampleSpec.m */; };
 		9C0DE4E117343E840052EEB1 /* zen-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C0DE4E017343E840052EEB1 /* zen-image.jpg */; };
 		9C0DE4E4173535D30052EEB1 /* Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0DE4E3173535D30052EEB1 /* Time.m */; };
+		9C0DE4E817353C7A0052EEB1 /* ActiveTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0DE4E617353C7A0052EEB1 /* ActiveTimerViewController.m */; };
+		9C0DE4E917353C7A0052EEB1 /* ActiveTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C0DE4E717353C7A0052EEB1 /* ActiveTimerViewController.xib */; };
+		9C0DE4ED173540420052EEB1 /* zen-rocks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C0DE4EC173540420052EEB1 /* zen-rocks.jpg */; };
 		9C67E37A1733DF050030FD9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C67E3791733DF050030FD9E /* UIKit.framework */; };
 		9C67E37C1733DF050030FD9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C67E37B1733DF050030FD9E /* Foundation.framework */; };
 		9C67E37E1733DF050030FD9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C67E37D1733DF050030FD9E /* CoreGraphics.framework */; };
@@ -44,6 +47,10 @@
 		9C0DE4E017343E840052EEB1 /* zen-image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "zen-image.jpg"; sourceTree = "<group>"; };
 		9C0DE4E2173535D30052EEB1 /* Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Time.h; sourceTree = "<group>"; };
 		9C0DE4E3173535D30052EEB1 /* Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Time.m; sourceTree = "<group>"; };
+		9C0DE4E517353C7A0052EEB1 /* ActiveTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveTimerViewController.h; sourceTree = "<group>"; };
+		9C0DE4E617353C7A0052EEB1 /* ActiveTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveTimerViewController.m; sourceTree = "<group>"; };
+		9C0DE4E717353C7A0052EEB1 /* ActiveTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveTimerViewController.xib; sourceTree = "<group>"; };
+		9C0DE4EC173540420052EEB1 /* zen-rocks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "zen-rocks.jpg"; sourceTree = "<group>"; };
 		9C67E3761733DF050030FD9E /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C67E3791733DF050030FD9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C67E37B1733DF050030FD9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,9 +138,13 @@
 				9C67E3891733DF050030FD9E /* AppDelegate.m */,
 				9C67E3911733DF050030FD9E /* ViewController.h */,
 				9C67E3921733DF050030FD9E /* ViewController.m */,
+				9C67E3941733DF050030FD9E /* ViewController.xib */,
+				9C0DE4E517353C7A0052EEB1 /* ActiveTimerViewController.h */,
+				9C0DE4E617353C7A0052EEB1 /* ActiveTimerViewController.m */,
+				9C0DE4E717353C7A0052EEB1 /* ActiveTimerViewController.xib */,
 				9C0DE4E2173535D30052EEB1 /* Time.h */,
 				9C0DE4E3173535D30052EEB1 /* Time.m */,
-				9C67E3941733DF050030FD9E /* ViewController.xib */,
+				9C0DE4EC173540420052EEB1 /* zen-rocks.jpg */,
 				9C0DE4E017343E840052EEB1 /* zen-image.jpg */,
 				9C67E3801733DF050030FD9E /* Supporting Files */,
 			);
@@ -251,6 +262,8 @@
 				9C67E3901733DF050030FD9E /* Default-568h@2x.png in Resources */,
 				9C67E3961733DF050030FD9E /* ViewController.xib in Resources */,
 				9C0DE4E117343E840052EEB1 /* zen-image.jpg in Resources */,
+				9C0DE4E917353C7A0052EEB1 /* ActiveTimerViewController.xib in Resources */,
+				9C0DE4ED173540420052EEB1 /* zen-rocks.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +330,7 @@
 				9C67E38A1733DF050030FD9E /* AppDelegate.m in Sources */,
 				9C67E3931733DF050030FD9E /* ViewController.m in Sources */,
 				9C0DE4E4173535D30052EEB1 /* Time.m in Sources */,
+				9C0DE4E817353C7A0052EEB1 /* ActiveTimerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

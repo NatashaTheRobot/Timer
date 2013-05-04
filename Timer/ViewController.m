@@ -7,23 +7,27 @@
 //
 
 #import "ViewController.h"
-#import "Time.h"
+#import "ActiveTimerViewController.h"
 
 @interface ViewController ()
 {
     __weak IBOutlet UILabel *timeLabel;
     __weak IBOutlet UITextField *textField;
     
-    Time *time;
-    
     int textFieldTextLength;
 }
 - (IBAction)enterStartTime:(id)sender;
 - (IBAction)clearWithButton:(id)sender;
+- (IBAction)startTimer:(id)sender;
+
+@property (nonatomic, strong) ActiveTimerViewController *activeTimerViewController;
 
 @end
 
 @implementation ViewController
+
+@synthesize activeTimerViewController;
+@synthesize time;
 
 - (void)viewDidLoad
 {
@@ -66,5 +70,13 @@
     textField.text = @"";
     textFieldTextLength = 0;
     timeLabel.text = time.timeText;
+}
+
+- (IBAction)startTimer:(id)sender {
+    self.activeTimerViewController = [[ActiveTimerViewController alloc] initWithNibName:@"ActiveTimerViewController" bundle:nil];
+    self.activeTimerViewController.time = [[Time alloc] init];
+    self.activeTimerViewController.time = time;
+    [self.view addSubview:self.activeTimerViewController.view];
+    [textField resignFirstResponder];
 }
 @end

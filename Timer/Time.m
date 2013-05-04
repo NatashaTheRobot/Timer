@@ -12,6 +12,15 @@
 
 @synthesize timeText;
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        timeText = @"00:00:00";
+    }
+    return self;
+}
+
 - (NSString *)newTime:(NSString *)textFieldText
 {
     switch ([textFieldText length]) {

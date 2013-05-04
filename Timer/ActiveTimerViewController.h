@@ -1,15 +1,15 @@
 //
-//  ViewController.h
+//  ActiveTimerViewController.h
 //  Timer
 //
-//  Created by Natasha Murashev on 5/3/13.
+//  Created by Natasha Murashev on 5/4/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "Time.h"
 
-@interface ViewController : UIViewController
+@interface ActiveTimerViewController : UIViewController
 
 @property (nonatomic, retain) Time *time;
 
