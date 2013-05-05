@@ -86,12 +86,12 @@
     }
     
     //seconds
-    int lastSeconds = seconds - (hours * 60 * 60) - (minutes * 60);
+    int remainingSeconds = seconds - (hours * 60 * 60) - (minutes * 60);
     
-    if (lastSeconds > 9) {
-        timeText = [timeText stringByAppendingFormat:@"%i", lastSeconds];
+    if (remainingSeconds > 9) {
+        timeText = [timeText stringByAppendingFormat:@"%i", remainingSeconds];
     } else {
-        timeText = [timeText stringByAppendingFormat:@"0%i", lastSeconds];
+        timeText = [timeText stringByAppendingFormat:@"0%i", remainingSeconds];
     }
     
     return timeText;
