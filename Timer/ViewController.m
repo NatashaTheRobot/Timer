@@ -73,10 +73,12 @@
 }
 
 - (IBAction)startTimer:(id)sender {
-    self.activeTimerViewController = [[ActiveTimerViewController alloc] initWithNibName:@"ActiveTimerViewController" bundle:nil];
-    self.activeTimerViewController.time = [[Time alloc] init];
-    self.activeTimerViewController.time = time;
-    [self.view addSubview:self.activeTimerViewController.view];
-    [textField resignFirstResponder];
+    if (![timeLabel.text isEqualToString:@"00:00:00"]) {
+        self.activeTimerViewController = [[ActiveTimerViewController alloc] initWithNibName:@"ActiveTimerViewController" bundle:nil];
+        self.activeTimerViewController.time = [[Time alloc] init];
+        self.activeTimerViewController.time = time;
+        [self.view addSubview:self.activeTimerViewController.view];
+        [textField resignFirstResponder];
+    }
 }
 @end
