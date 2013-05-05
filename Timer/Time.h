@@ -15,5 +15,6 @@
 - (NSString *)newTime:(NSString *)textFieldText;
 - (NSInteger)convertTimeTextToSeconds;
 - (NSString *)convertSecondsToTimeText:(NSInteger)seconds;
+- (void)formatIncorrectTime;
 
 @end

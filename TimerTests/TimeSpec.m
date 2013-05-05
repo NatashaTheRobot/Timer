@@ -40,6 +40,34 @@ describe(@"Time", ^{
             [[[time convertSecondsToTimeText:0] should] equal:@"00:00:00"];
         });
     });
+    
+    context(@"formatIncorrectTime", ^{
+        it(@"moves the seconds to minutes for time text 00:05:68", ^{
+            time.timeText = @"00:05:68";
+            [time formatIncorrectTime];
+            [[time.timeText should] equal:@"00:06:08"];
+        });
+        it(@"moves the minutes to hours for time text 01:96:08", ^{
+            time.timeText = @"01:96:08";
+            [time formatIncorrectTime];
+            [[time.timeText should] equal:@"02:36:08"];
+        });
+        it(@"moves the seconds and minutes to hours for time text 06:98:98", ^{
+            time.timeText = @"06:98:98";
+            [time formatIncorrectTime];
+            [[time.timeText should] equal:@"07:39:38"];
+        });
+        it(@"moves the seconds and minutes to hours for time text 60:60:60", ^{
+            time.timeText = @"60:60:60";
+            [time formatIncorrectTime];
+            [[time.timeText should] equal:@"61:01:00"];
+        });
+        it(@"moves the seconds and minutes to hours for time text 99:99:99", ^{
+            time.timeText = @"99:99:99";
+            [time formatIncorrectTime];
+            [[time.timeText should] equal:@"100:40:39"];
+        });
+    });
 });
 
 SPEC_END

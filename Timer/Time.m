@@ -46,6 +46,75 @@
     return timeText;
 }
 
+- (void)formatIncorrectTime
+{
+    NSString *correctTimeText;
+    
+    // seconds
+    NSString *secondsText = [timeText substringWithRange:NSMakeRange(6, 2)];
+    int seconds = [secondsText intValue];
+    int remainingSeconds = -1;
+    
+    if (seconds > 59) {
+        remainingSeconds = seconds - 60;
+        if (remainingSeconds > 9) {
+            correctTimeText = [[NSString alloc] initWithFormat:@":%i", remainingSeconds];
+        } else {
+            correctTimeText = [[NSString alloc] initWithFormat:@":0%i", remainingSeconds];
+        }
+    } else {
+        correctTimeText = [[NSString alloc] initWithFormat:@":%@", secondsText];
+    }
+    
+    // minutes
+    NSString *minutesText = [timeText substringWithRange:NSMakeRange(3, 2)];
+    int minutes = [minutesText intValue];
+    int remainingMinutes = -1;
+    NSString *newMinutesText;
+    
+    if (remainingSeconds >= 0) {
+        minutes += 1;
+    }
+    
+    if (minutes > 59) {
+        remainingMinutes = minutes - 60;
+        if (remainingMinutes > 9) {
+            newMinutesText = [[NSString alloc] initWithFormat:@":%i", remainingMinutes];
+        } else {
+            newMinutesText = [[NSString alloc] initWithFormat:@":0%i", remainingMinutes];
+        }
+    } else {
+        if (minutes > 9) {
+            newMinutesText = [[NSString alloc] initWithFormat:@":%i", minutes];
+        } else {
+            newMinutesText = [[NSString alloc] initWithFormat:@":0%i", minutes];
+        }
+        
+    }
+    
+    correctTimeText = [newMinutesText stringByAppendingString:correctTimeText];
+    
+    // hours
+    
+    NSString *hoursText = [timeText substringWithRange:NSMakeRange(0, 2)];
+    int hours = [hoursText intValue];
+    NSString *newHoursText;
+    
+    if (remainingMinutes >= 0) {
+        hours += 1;
+    }
+    
+    if (hours > 9) {
+        newHoursText = [[NSString alloc] initWithFormat:@"%i", hours];
+    } else {
+        newHoursText = [[NSString alloc] initWithFormat:@"0%i", hours];
+    }
+    
+    correctTimeText = [newHoursText stringByAppendingString:correctTimeText];
+    
+    timeText = correctTimeText;
+}
+
 - (NSInteger)convertTimeTextToSeconds
 {
     NSInteger seconds = 0;

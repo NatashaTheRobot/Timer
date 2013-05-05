@@ -74,6 +74,8 @@
 
 - (IBAction)startTimer:(id)sender {
     if (![timeLabel.text isEqualToString:@"00:00:00"]) {
+        // reset timer text to be correct
+        [time formatIncorrectTime];
         self.activeTimerViewController = [[ActiveTimerViewController alloc] initWithNibName:@"ActiveTimerViewController" bundle:nil];
         self.activeTimerViewController.time = [[Time alloc] init];
         self.activeTimerViewController.time = time;
