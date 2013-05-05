@@ -109,6 +109,9 @@
 
 - (void)restartTimer
 {
+    float pauseTime = -1*[pauseStart timeIntervalSinceNow];
+    
+    [countdownTimer setFireDate:[previousFireDate initWithTimeInterval:pauseTime sinceDate:previousFireDate]];
     
 }
 
