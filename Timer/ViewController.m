@@ -12,7 +12,6 @@
 @interface ViewController ()
 {
     __weak IBOutlet UILabel *timeLabel;
-    __weak IBOutlet UITextField *textField;
     
     int textFieldTextLength;
 }
@@ -28,6 +27,7 @@
 
 @synthesize activeTimerViewController;
 @synthesize time;
+@synthesize textField;
 
 - (void)viewDidLoad
 {
@@ -73,13 +73,19 @@
 }
 
 - (IBAction)startTimer:(id)sender {
+    
     if (![timeLabel.text isEqualToString:@"00:00:00"]) {
         // reset timer text to be correct
+        textField.text = @"";
+        timeLabel.text = @"00:00:00";
         [time formatIncorrectTime];
         self.activeTimerViewController = [[ActiveTimerViewController alloc] initWithNibName:@"ActiveTimerViewController" bundle:nil];
         self.activeTimerViewController.time = [[Time alloc] init];
         self.activeTimerViewController.time = time;
         [self.view addSubview:self.activeTimerViewController.view];
+        
+        self.activeTimerViewController.viewController = [[ViewController alloc] init];
+        self.activeTimerViewController.viewController = self;
         [textField resignFirstResponder];
     }
 }

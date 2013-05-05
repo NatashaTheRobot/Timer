@@ -9,6 +9,7 @@
 #import "ActiveTimerViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
 
+
 @interface ActiveTimerViewController ()
 {
     __weak IBOutlet UILabel *timeLabel;
@@ -37,6 +38,7 @@
 
 @synthesize time;
 @synthesize counter;
+@synthesize viewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,7 +65,9 @@
 
 - (IBAction)cancelWithButton:(id)sender
 {
+    [countdownTimer invalidate];
     [self.view removeFromSuperview];
+    [viewController.textField becomeFirstResponder];
 }
 
 - (IBAction)pauseOrRestartWithButton:(id)sender

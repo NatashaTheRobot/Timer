@@ -10,7 +10,11 @@
 #import "Time.h"
 
 @interface ViewController : UIViewController
+{
+    IBOutlet UITextField *textField;
+}
 
 @property (nonatomic, retain) Time *time;
+@property (nonatomic, retain) IBOutlet UITextField *textField;
 
 @end
