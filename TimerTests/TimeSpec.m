@@ -67,6 +67,11 @@ describe(@"Time", ^{
             [time formatIncorrectTime];
             [[time.timeText should] equal:@"100:40:39"];
         });
+        it(@"returns the same time as the original when the time is entered correctly", ^{
+            time.timeText = @"06:07:59";
+            [time formatIncorrectTime];
+            [[time.timeText should] equal:@"06:07:59"];
+        });
     });
 });
 

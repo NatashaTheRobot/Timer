@@ -29,6 +29,8 @@
 		9C67E39F1733DF060030FD9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C67E3791733DF050030FD9E /* UIKit.framework */; };
 		9C67E3A01733DF060030FD9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C67E37B1733DF050030FD9E /* Foundation.framework */; };
 		9C67E3A81733DF060030FD9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C67E3A61733DF060030FD9E /* InfoPlist.strings */; };
+		9C90282F1736EC1D00BB5271 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C90282E1736EC1D00BB5271 /* AudioToolbox.framework */; };
+		9C9028311736F1D500BB5271 /* Store_Door_Chime.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C9028301736F1D500BB5271 /* Store_Door_Chime.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		9C67E39D1733DF060030FD9E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9C67E3A51733DF060030FD9E /* TimerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimerTests-Info.plist"; sourceTree = "<group>"; };
 		9C67E3A71733DF060030FD9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9C90282E1736EC1D00BB5271 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9C9028301736F1D500BB5271 /* Store_Door_Chime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Store_Door_Chime.wav; path = ../../../../../Downloads/Store_Door_Chime.wav; sourceTree = "<group>"; };
 		D62D8B7049D34A4882BCB327 /* libPods-TimerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TimerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C90282F1736EC1D00BB5271 /* AudioToolbox.framework in Frameworks */,
 				9C67E37A1733DF050030FD9E /* UIKit.framework in Frameworks */,
 				9C67E37C1733DF050030FD9E /* Foundation.framework in Frameworks */,
 				9C67E37E1733DF050030FD9E /* CoreGraphics.framework in Frameworks */,
@@ -122,6 +127,7 @@
 		9C67E3781733DF050030FD9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C90282E1736EC1D00BB5271 /* AudioToolbox.framework */,
 				9C67E3791733DF050030FD9E /* UIKit.framework */,
 				9C67E37B1733DF050030FD9E /* Foundation.framework */,
 				9C67E37D1733DF050030FD9E /* CoreGraphics.framework */,
@@ -146,6 +152,7 @@
 				9C0DE4E3173535D30052EEB1 /* Time.m */,
 				9C0DE4EC173540420052EEB1 /* zen-rocks.jpg */,
 				9C0DE4E017343E840052EEB1 /* zen-image.jpg */,
+				9C9028301736F1D500BB5271 /* Store_Door_Chime.wav */,
 				9C67E3801733DF050030FD9E /* Supporting Files */,
 			);
 			path = Timer;
@@ -264,6 +271,7 @@
 				9C0DE4E117343E840052EEB1 /* zen-image.jpg in Resources */,
 				9C0DE4E917353C7A0052EEB1 /* ActiveTimerViewController.xib in Resources */,
 				9C0DE4ED173540420052EEB1 /* zen-rocks.jpg in Resources */,
+				9C9028311736F1D500BB5271 /* Store_Door_Chime.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

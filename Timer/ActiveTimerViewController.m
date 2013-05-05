@@ -7,6 +7,7 @@
 //
 
 #import "ActiveTimerViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ActiveTimerViewController ()
 {
@@ -15,6 +16,8 @@
     int counter;
     NSTimer *countdownTimer;
     NSDate *pauseStart, *previousFireDate;
+    
+    SystemSoundID systemSoundID;
 }
 - (IBAction)cancelWithButton:(id)sender;
 - (IBAction)pauseOrRestartWithButton:(id)sender;
@@ -24,6 +27,7 @@
 - (void)advanceTimer:(NSTimer *)countdownTimer;
 - (void)pauseTimer;
 - (void)restartTimer;
+- (void)playSound;
 
 @property (assign) int counter;
 
@@ -94,6 +98,7 @@
     [self setCounter:(counter - 1)];
     timeLabel.text = [time convertSecondsToTimeText:counter];
     if (counter <= 0) {
+        [self playSound];
         [timer invalidate];
     }
 }
@@ -113,6 +118,14 @@
     
     [countdownTimer setFireDate:[previousFireDate initWithTimeInterval:pauseTime sinceDate:previousFireDate]];
     
+}
+
+- (void)playSound
+{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Store_Door_Chime" ofType:@"wav"];
+    NSURL *fileURL = [NSURL fileURLWithPath:filePath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileURL, &systemSoundID);
+    AudioServicesPlaySystemSound(systemSoundID);
 }
 
 @end
