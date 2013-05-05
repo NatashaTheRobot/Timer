@@ -46,4 +46,55 @@
     return timeText;
 }
 
+- (NSInteger)convertTimeTextToSeconds
+{
+    NSInteger seconds = 0;
+    
+    // seconds
+    NSString *secondsText = [timeText substringWithRange:NSMakeRange(6, 2)];
+    seconds += [secondsText intValue];
+    
+    // minutes
+    NSString *minutesText = [timeText substringWithRange:NSMakeRange(3, 2)];
+    seconds += [minutesText intValue] * 60;
+    
+    // hours
+    NSString *hoursText = [timeText substringWithRange:NSMakeRange(0,2)];
+    seconds += [hoursText intValue] * 60 * 60;
+    
+    return seconds;
+}
+
+- (NSString *)convertSecondsToTimeText:(NSInteger)seconds
+{
+    // hours
+    int hours = seconds / (60 * 60);
+    
+    if (hours > 9) {
+        timeText = [[NSString alloc] initWithFormat:@"%i:", hours];
+    } else {
+        timeText = [[NSString alloc] initWithFormat:@"0%i:", hours];
+    }
+    
+    // minutes
+    int minutes = (seconds - (hours * 60 * 60)) / 60;
+    
+    if (minutes > 9) {
+        timeText = [timeText stringByAppendingFormat:@"%i:", minutes];
+    } else {
+        timeText = [timeText stringByAppendingFormat:@"0%i:", minutes];
+    }
+    
+    //seconds
+    int lastSeconds = seconds - (hours * 60 * 60) - (minutes * 60);
+    
+    if (lastSeconds > 9) {
+        timeText = [timeText stringByAppendingFormat:@"%i", lastSeconds];
+    } else {
+        timeText = [timeText stringByAppendingFormat:@"0%i", lastSeconds];
+    }
+    
+    return timeText;
+}
+
 @end

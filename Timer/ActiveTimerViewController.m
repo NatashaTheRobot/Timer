@@ -12,6 +12,7 @@
 {
     __weak IBOutlet UILabel *timeLabel;
 }
+- (IBAction)cancelWithButton:(id)sender;
 
 @end
 
@@ -41,9 +42,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)dummyMethod
-{
-    NSLog(@"%@", time);
+- (IBAction)cancelWithButton:(id)sender {
+    [self.view removeFromSuperview];
 }
 
 @end

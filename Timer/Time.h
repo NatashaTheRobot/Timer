@@ -13,5 +13,7 @@
 @property (nonatomic, strong) NSString *timeText;
 
 - (NSString *)newTime:(NSString *)textFieldText;
+- (NSInteger)convertTimeTextToSeconds;
+- (NSString *)convertSecondsToTimeText:(NSInteger)seconds;
 
 @end
